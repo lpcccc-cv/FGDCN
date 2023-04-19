@@ -14,10 +14,10 @@ We test our model on Adobe240 testset. The original videos are 240FPS. For testi
 
 Figures from left to right are the input videos with 30FPS, interpolation videos with 60FPS, 120FPS and 240FPS, respectively.
 <p float="left">
-  <img src=./demo_video/30fps.gif width=300 /> 30fps <\center>
-  <img src=./demo_video/60fps.gif width=300 /> 60fps <\center>
-  <img src=./demo_video/120fps.gif width=300 /> 120fps <\center>
-  <img src=./demo_video/240fps.gif width=300 /> 240fps <\center>
+  <img src=./demo_video/30fps.gif width=300 />
+  <img src=./demo_video/60fps.gif width=300 />
+  <img src=./demo_video/120fps.gif width=300 />
+  <img src=./demo_video/240fps.gif width=300 />
 </p>
 
 <p float="left">
