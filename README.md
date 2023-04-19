@@ -10,7 +10,7 @@ Motion-based video frame interpolation (VFI) methods have made remarkable progre
 ![](./images/fast_motion_examples.png)
 
 ## Video demos
-Figures from left to right are the original video with 30FPS, interpolation video results with 60FPS, 120FPS and 240FPS, respectively.
+We test our model on Adobe240 testset. The original videos are 240FPS. For testing our model, we first downsample them to 30FPS and then use our methods to restore them. Figures from left to right are the original video with 30FPS, interpolation video results with 60FPS, 120FPS and 240FPS, respectively.
 <p float="left">
   <img src=./demo_video/30fps.gif width=240 />
   <img src=./demo_video/60fps.gif width=240 />
