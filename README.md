@@ -27,6 +27,6 @@ Figures from left to right are the input videos with **30FPS**, interpolation vi
   <img src=./demo_video/240fps_v2.gif width=300 />
 </p>
 
-Once our paper is accepted, we will release our code!
+Once our paper is accepted, we will release our code. Thank you!
 
 
