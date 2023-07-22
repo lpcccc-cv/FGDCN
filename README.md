@@ -16,6 +16,8 @@ sh train.sh
 ```
 
 ## Test
+Model weight and testing results can be downloaded from : "https://pan.baidu.com/s/160kaWNhfq2ZTumRBDLiPSQ", extract code: fvrf
+
 Modify the data path and run:
 ```
 python test_film.py
