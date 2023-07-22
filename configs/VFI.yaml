@@ -1,0 +1,82 @@
+name: exp_1
+use_tb_logger: false
+model: VideoSR_base
+distortion: sr
+scale: 2
+gpu_ids: [0]
+dist: true
+GAN: false
+use_time: False
+
+datasets:
+  train:
+    name: Vimeo7
+    mode: Vimeo7
+    interval_list: [1]
+    random_reverse: true
+    border_mode: false
+
+    dataroot_GT: /home/lpc/dataset/natural_img/vimeo7_train_GT.lmdb
+    dataroot_LQ: /home/lpc/dataset/natural_img/vimeo7_train_GT.lmdb
+    cache_keys: /home/lpc/dataset/natural_img/vimeo7_train_GT.lmdb/Vimeo7_train_keys.pkl
+
+    N_frames: 3
+    use_shuffle: true
+    n_workers: 2 # per GPU
+    batch_size: 4  # total
+    GT_size: 256 
+    LQ_size: 256
+    LR_resolution: [3, 256, 448]
+    HR_resolution: [3, 256, 448]
+    use_crop: true
+    use_flip: true
+    use_rot: true  # 带flow不能旋转
+    color: RGB
+    use_time: False
+  
+  val:
+    name: IXI
+    mode: Val_vimeo
+    dataroot_GT: /home/lpc/dataset/eval_VFI/temp/Beanbags
+    dataroot_LQ: /home/lpc/dataset/eval_VFI/temp/Beanbags
+    N_frames: 3   # 数据采集帧数
+    use_time: False
+
+network_G:
+  which_model_G: Ours
+  nf: 64
+  nframes: 3
+  groups: 8
+  front_RBs: 5
+  mid_RBs: 0
+  back_RBs: 10
+  HR_in: false
+
+path:
+  pretrain_model_G: ~
+  strict_load: False
+  resume_state: ~
+
+train:
+  lr_G: !!float 1e-5
+  lr_scheme: CosineAnnealingLR_Restart
+  
+  beta1: 0.9
+  beta2: 0.99
+  niter: 400000
+  warmup_iter: -1
+  T_period: [200000, 200000, 200000]
+  restarts: [200000, 200000]
+  restart_weights: [1, 1]
+  eta_min: !!float 1e-5
+
+  pixel_criterion: lp
+
+  pixel_weight: 1.0
+  val_freq: !!float 1000
+
+  manual_seed: 0
+
+logger:
+  print_freq: 10
+  save_checkpoint_freq: !!float 1000
