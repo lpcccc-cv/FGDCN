@@ -50,7 +50,7 @@ Figures from left to right are the input videos with **30FPS**, interpolation vi
   <img src=./demo_video/240fps_v2.gif width=300 />
 </p>
 
-# Citation
+## Citation
 If you find the code helpful in your research or work, please cite our paper.
 ```BibTeX
 @ARTICLE{10164197,
@@ -64,7 +64,10 @@ If you find the code helpful in your research or work, please cite our paper.
   doi={10.1109/TMM.2023.3289702}}
 ```
 
-# Contact
+## Contact
 If you have any questions, feel free to E-mail me with [pengchenglei1995@163.com].
+
+## Acknowledge
+Our code is built based on [BasicSR](https://github.com/XPixelGroup/BasicSR) and [VFIformer](https://github.com/dvlab-research/VFIformer), thank them for releasing their code!
 
 
